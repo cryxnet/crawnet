@@ -1,4 +1,3 @@
-from neo4j import GraphDatabase
 from database import Database
 import os
 from dotenv import load_dotenv
@@ -38,18 +37,18 @@ ip_exists_query = "OPTIONAL MATCH (n:IP{address:'IP_HOLDER'})RETURN n IS NOT NUL
 location_exists_query = "OPTIONAL MATCH (n:LOCATION{country:'COUNTRY_HOLDER', region:'REGION_HOLDER', city:'CITY_HOLDER'})RETURN n IS NOT NULL AS Predicate"
 port_exists_query = "OPTIONAL MATCH (n:PORT{number:'PORTNUMBER_HOLDER', name: 'DESCRIPTION_HOLDER'})RETURN n IS NOT NULL AS Predicate"
 
-def buildDomainNode(name, data):
-    create_domain_query = domain_node_create_query.replace('NAME_HOLDER', name).replace('A_HOLDER', str(data["records"]["A"][0])).replace('AAAAT_HOLDER', str(data["records"]["AAAA"])).replace('CNME_HOLDER', str(data["records"]["CNAME"])).replace('MX_HOLDER', str(data["records"]["MX"])).replace('NS_HOLDER', str(data["records"]["NS"])).replace('TXT_HOLDER', str(data["records"]["TXT"]))
-    create_ip_query = ip_node_create_query.replace('IP_HOLDER', data["records"]["A"][0])
-    create_location_query = location_node_create_query.replace('COUNTRY_HOLDER', str(data["ipaddrs"]["location"]["country"])).replace('REGION_HOLDER', str(data["ipaddrs"]["location"]["region"])).replace('CITY_HOLDER', str(data["ipaddrs"]["location"]["city"]))
+def buildDomainNode(name, context):
+    create_domain_query = domain_node_create_query.replace('NAME_HOLDER', name).replace('A_HOLDER', str(context["records"]["A"][0])).replace('AAAAT_HOLDER', str(context["records"]["AAAA"])).replace('CNME_HOLDER', str(context["records"]["CNAME"])).replace('MX_HOLDER', str(context["records"]["MX"])).replace('NS_HOLDER', str(context["records"]["NS"])).replace('TXT_HOLDER', str(context["records"]["TXT"]))
+    create_ip_query = ip_node_create_query.replace('IP_HOLDER', context["records"]["A"][0])
+    create_location_query = location_node_create_query.replace('COUNTRY_HOLDER', str(context["ipaddrs"]["location"]["country"])).replace('REGION_HOLDER', str(context["ipaddrs"]["location"]["region"])).replace('CITY_HOLDER', str(context["ipaddrs"]["location"]["city"]))
     create_port_query = port_node_create_query.replace('PORTNUMBER_HOLDER', "443").replace('DESCRIPTION_HOLDER', 'HTTPS')
     
-    match_domain_with_ip_query = domain_to_ip_match_query.replace('DOMAIN_HOLDER', name).replace('IP_HOLDER', data["records"]["A"][0])
-    match_ip_with_location_query = ip_to_location_match_query.replace('IP_HOLDER', data["records"]["A"][0]).replace('COUNTRY_HOLDER', str(data["ipaddrs"]["location"]["country"])).replace('REGION_HOLDER', str(data["ipaddrs"]["location"]["region"])).replace('CITY_HOLDER', str(data["ipaddrs"]["location"]["city"]))
-    match_ip_with_port_query = ip_to_port_match_query.replace('IP_HOLDER', data["records"]["A"][0]).replace("PORTNUMBER_HOLDER", "443")
+    match_domain_with_ip_query = domain_to_ip_match_query.replace('DOMAIN_HOLDER', name).replace('IP_HOLDER', context["records"]["A"][0])
+    match_ip_with_location_query = ip_to_location_match_query.replace('IP_HOLDER', context["records"]["A"][0]).replace('COUNTRY_HOLDER', str(context["ipaddrs"]["location"]["country"])).replace('REGION_HOLDER', str(context["ipaddrs"]["location"]["region"])).replace('CITY_HOLDER', str(context["ipaddrs"]["location"]["city"]))
+    match_ip_with_port_query = ip_to_port_match_query.replace('IP_HOLDER', context["records"]["A"][0]).replace("PORTNUMBER_HOLDER", "443")
     
-    check_ip_exists_query = ip_exists_query.replace('IP_HOLDER', data["records"]["A"][0])
-    check_location_exists_query = location_exists_query.replace('COUNTRY_HOLDER', str(data["ipaddrs"]["location"]["country"])).replace('REGION_HOLDER', str(data["ipaddrs"]["location"]["region"])).replace('CITY_HOLDER', str(data["ipaddrs"]["location"]["city"]))
+    check_ip_exists_query = ip_exists_query.replace('IP_HOLDER', context["records"]["A"][0])
+    check_location_exists_query = location_exists_query.replace('COUNTRY_HOLDER', str(context["ipaddrs"]["location"]["country"])).replace('REGION_HOLDER', str(context["ipaddrs"]["location"]["region"])).replace('CITY_HOLDER', str(context["ipaddrs"]["location"]["city"]))
     check_port_exists_query = port_exists_query.replace('PORTNUMBER_HOLDER', "443").replace('DESCRIPTION_HOLDER', 'HTTPS')
     
     print("[+] Query Created: " + create_domain_query)
@@ -84,9 +83,6 @@ def buildDomainNode(name, data):
 
     return "Done!"
 
-def checkLocation():
-   return db.query("OPTIONAL MATCH (n:LOCATION{country:'switzerland', region:'zuerich', city:'zuerich'})RETURN n IS NOT NULL AS Predicate")
-
 if __name__ == "__main__":
     print(header + "\n")
     
@@ -102,7 +98,7 @@ if __name__ == "__main__":
         if menuID == 1:
             domain = input("$~ Enter Domain >> ")
             reconResult = Recon.run(domain)
-            queryResult = buildDomainNode(domain, reconResult)
+            queryResult = buildDomainNode(name=domain, context=reconResult)
             print(queryResult)
                   
         else:

@@ -1,29 +1,20 @@
 <a name="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![Apache 2.0 License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/cryxnet/crawnet">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="docs/assets/logo.png" alt="Logo">
   </a>
 
-  <h3 align="center">CRAWNET</h3>
+  <h1 align="center">CRAWNET</h1>
 
   <p align="center">
-     Web-Based Host Discovery Framework
+     Graph based domain discovery toolkit
     <br />
     <a href="https://github.com/cryxnet/crawnet"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/cryxnet/crawnet/issues">View Demo</a>
-    ·
     <a href="https://github.com/cryxnet/crawnet/issues">Report Bug</a>
     ·
     <a href="https://github.com/cryxnet/crawnet/issues">Request Feature</a>
@@ -47,12 +38,10 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#conclusion-&-reflection">Conclusion & Reflection</a></li>
   </ol>
 </details>
 
@@ -60,15 +49,13 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](SOON)
-
-SOON
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-SOON
+- [Neo4j](https://neo4j.com)
+- [Python](https://python.com)
+- [IPIFY](https://www.ipify.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,23 +63,34 @@ SOON
 
 ## Getting Started
 
-SOON
+1. `git clone https://github.com/cryxnet/crawnet.git`
+2. `cd crawnet`
+3. `python src/main.py`
+4. Enter a Menu Number
+5. Follow the instructions
+6. If `Done!` is in the output without any errors exists the query was run successfully
+7. Go to Neo4j Desktop and run the query `MATCH (n) RETURN n` to see all datas and relationships
 
 ### Prerequisites
 
-SOON
+- Neo4j Database
+- Python 3.x
 
 ### Installation
 
-SOON
+1. Install Python Packages
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+```sh
+pip install python-dotenv
+pip install requests
+pip install neo4j
+pip install json
+pip install python-whois
+pip install dnspython
+```
 
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-SOON
+2. Install Neo4j Database
+3. Create a .env file and configure the file with the corresponding [variables](#env-variables)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,13 +98,18 @@ SOON
 
 ## Roadmap
 
-SOON
+- [ ] More nodes => divisions from the current one
+- [ ] More detailed informations
+- [ ] Full port scanning process
+- [ ] Service Recognition
+- [ ] OS Recognition
+- [ ] Web based graph format
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
+<!-- ACKNOWLEDGMENTS -->
 
-## Contributing
+## Conclusion & Reflection
 
 SOON
 
@@ -116,42 +119,14 @@ SOON
 
 ## License
 
-Distributed under the Apache 2.0 License. See `LICENSE` for more information.
+Distributed under the Apache 2.0 License. See [`LICENSE`](LICENSE) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTACT -->
+## Env Variables
 
-## Contact
-
-SOON
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-SOON
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-[contributors-shield]: SOON
-[contributors-url]: SOON
-[forks-shield]: SOON
-[forks-url]: SOON
-[stars-shield]: SOON
-[stars-url]: SOON
-[issues-shield]: SOON
-[issues-url]: SOON
-[license-shield]: SOON
-[license-url]: SOON
-[linkedin-shield]: SOON
-[linkedin-url]: SOON
-[product-screenshot]: SOON
-
-## TEMP => ENV VARS
-
-- DB_URI
-- DB_USER
-- DB_PASSWORD
+| Name        | Description                   |
+| ----------- | ----------------------------- |
+| DB_URI      | URI for DB connection         |
+| DB_USER     | Username of the db            |
+| DB_PASSWORD | Password of the provided user |
