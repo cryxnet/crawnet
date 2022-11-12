@@ -111,7 +111,7 @@ pip install dnspython
 
 ## Conclusion & Reflection
 
-SOON
+I have oriented myself to the Investigation Tool Maltego. I find it exciting how you can store data in a graph database. Normally you would store it in simple collons and reference the specific collons. However, with graph databases like neo4j, you can connect data using links to show connections between components. I also find it exciting how this technology can be implemented in cybersecurity. You can program much better investigation and information gathering tools and display data with relationships easier. I find the whole graph databases very interesting and will continue this project. See [Roadmap](#roadmap).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
