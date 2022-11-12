@@ -4,7 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![Apache 2.0 License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
@@ -149,3 +149,9 @@ SOON
 [linkedin-shield]: SOON
 [linkedin-url]: SOON
 [product-screenshot]: SOON
+
+## TEMP => ENV VARS
+
+- DB_URI
+- DB_USER
+- DB_PASSWORD
