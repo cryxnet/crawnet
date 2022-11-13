@@ -49,7 +49,17 @@
 
 ## About The Project
 
+CRAWNET is a graph based domain discovery tool to gather information about domains and potential relationships with other actors.
+With help of Graph Databases each node represents a domain and their attributes like records, ips, services related with the ip and much more.
+This tool should be used for ethical and educational purposes only.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Screenshots
+
+![Screenshot](/docs/assets/screenshots/screenshot1.png)
+![Screenshot](/docs/assets/screenshots/screenshot2.png)
+![Screenshot](/docs/assets/screenshots/screenshot3.png)
 
 ### Built With
 

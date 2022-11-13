@@ -89,8 +89,6 @@ if __name__ == "__main__":
     while True:
         print("""
               [1] Discover new Domain
-              [2] Location Check Test
-              [3] Information
               """)
         
         menuID = int(input("$~ Enter Number >> "))
