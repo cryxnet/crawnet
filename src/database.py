@@ -3,29 +3,25 @@ from neo4j import GraphDatabase
 class Database:
     
     def __init__(self, uri, user, pwd):
-        self.__uri = uri
-        self.__user = user
-        self.__pwd = pwd
-        self.__driver = None
+        self.uri = uri
+        self.user = user
+        self.pwd = pwd
+        self.driver = None
         try:
-            self.__driver = GraphDatabase.driver(self.__uri, auth=(self.__user, self.__pwd))
+            self.driver = GraphDatabase.driver(self.uri, auth=(self.user, self.pwd))
         except Exception as e:
-            print("Failed to create the driver:", e)
+            print("Failed to create the driver: ", e)
         
     def close(self):
-        if self.__driver is not None:
-            self.__driver.close()
+        self.driver.close()
         
     def query(self, query, parameters=None, db=None):
-        assert self.__driver is not None, "Driver not initialized!"
-        session = None
         response = None
         try: 
-            session = self.__driver.session(database=db) if db is not None else self.__driver.session() 
-            response = list(session.run(query, parameters))
+            response = list(self.driver.session().run(query, parameters))
         except Exception as e:
             print("Query failed:", e)
         finally: 
-            if session is not None:
-                session.close()
+            if self.driver.session() is not None:
+                self.driver.session().close()
         return response
