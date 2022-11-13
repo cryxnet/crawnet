@@ -64,7 +64,7 @@ This tool should be used for ethical and educational purposes only.
 ### Built With
 
 - [Neo4j](https://neo4j.com)
-- [Python](https://python.com)
+- [Python](https://www.python.org/)
 - [IPIFY](https://www.ipify.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
