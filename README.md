@@ -60,13 +60,13 @@ YOUR USAGE OF THIS PROJECT CONSTITUTES YOUR AGREEMENT TO THE FOLLOWING TERMS:
 
     I DO NOT TAKE ANY RESPONSIBILITY FOR THE CASE. USE THIS PROJECT ONLY FOR RESEARCH PURPOSES, EDUCATIONAL PURPOSES & ETHICAL ONLY.
 
-    DorkStorm is a project related to Computer Security and for Educational Purposes and not a project that promotes illegal activities.
+    CRAWNET is a project related to Computer Security and for Educational Purposes and not a project that promotes illegal activities.
 
     Don't use this Project for any illegal activities.
 
     If something happens, we do not take any liability.
 
-    DorkStorm should be considered as a project for educational purposes.
+    CRAWNET should be considered as a project for educational purposes.
 
 ## Author
 
