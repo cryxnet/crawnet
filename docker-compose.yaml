@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 
 services:
     neo4j:
@@ -8,6 +8,8 @@ services:
             - '7687:7687'
         environment:
             - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
+        volumes:
+            - neo4j_data:/data
 
     overseen:
         build: ./overseen
@@ -30,3 +32,6 @@ services:
             - FLASK_APP_URL=${FLASK_APP_URL}
         depends_on:
             - overseen
+
+volumes:
+    neo4j_data:
