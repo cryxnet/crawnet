@@ -1,4 +1,4 @@
-# DorkStorm
+# CRAWNET
 
 CRAWNET is a graph-based domain discovery tool by CRYXNET that helps you gather information
 about domains and potential relationships with other actors.
