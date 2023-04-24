@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+    neo4j:
+        image: neo4j
+        ports:
+            - '7474:7474'
+            - '7687:7687'
+        environment:
+            - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
+
+    overseen:
+        build: ./overseen
+        ports:
+            - '5000:5000'
+        environment:
+            - NEO4J_USERNAME=${NEO4J_USERNAME}
+            - NEO4J_PASSWORD=${NEO4J_PASSWORD}
+            - NEO4J_CONNECTION_URI=${NEO4J_CONNECTION_URI}
+            - FLASK_APP=${FLASK_APP}
+            - FLASK_DEBUG=${FLASK_DEBUG}
+        depends_on:
+            - neo4j
+
+    dashboard:
+        build: ./dashboard
+        ports:
+            - '3000:3000'
+        environment:
+            - FLASK_APP_URL=${FLASK_APP_URL}
+        depends_on:
+            - overseen
