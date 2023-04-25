@@ -1,8 +1,27 @@
-# CRAWNET
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/cryxnet/crawnet">
+    <img src="assets/crawnet.png" alt="Logo" width="300" height="120">
+  </a>
 
+  <h3 align="center">CRAWNET</h3>
+
+  <p align="center">
 CRAWNET is a graph-based domain discovery tool by CRYXNET that helps you gather information
 about domains and potential relationships with other actors.
 With the power of graph databases, each node in the graph represents a domain and its attributes, such as DNS records, IP addresses, and services related to the IP.
+    <br />
+    <a href="https://github.com/cryxnet/crawnet"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/cryxnet/crawnet/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/cryxnet/crawnet/issues">Request Feature</a>
+        ·
+    <a href="https://github.com/cryxnet/crawnet/issues">Report Vulnerability</a>
+  </p>
+</div>
 
 ## Installation
 
@@ -51,6 +70,16 @@ The Intelligence Service is using the following sources:
 -   [Cert Fingerprint | CRT.SH](https://crt.sh/)
 -   [IP Information | IPAPI.CO](https://ipapi.co/IPADDRESS/json/)
 -   [Python | WHOIS](https://pypi.org/project/python-whois/)
+
+## Testing
+
+-   We have a pipeline that is automatically testing the [intergration test](/tests/intergration.py) between the 3 services and source code for any vulnerabilities
+
+## Security Policy
+
+-   Please take a moment to review and familiarize yourself with our [security policy](/SECURITY.md).
+-   We encourage you to report any issues, bugs, or vulnerabilities that you encounter while using our service.
+-   Your help in identifying and reporting any security issues or vulnerabilities is greatly appreciated. Please refer to our [security policy](/SECURITY.md) for guidance.
 
 ## Disclaimer
 

@@ -1,0 +1,55 @@
+name: Integration Test
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        services:
+            neo4j:
+                image: neo4j
+                ports:
+                    - '7474:7474'
+                    - '7687:7687'
+                environment:
+                    - NEO4J_AUTH=neo4j/neo4j123
+                volumes:
+                    - neo4j_data:/data
+            api:
+                build: ./overseen
+                ports:
+                    - '5000:5000'
+                environment:
+                    - NEO4J_USERNAME=neo4j
+                    - NEO4J_PASSWORD=neo4j123
+                    - NEO4J_CONNECTION_URI=bolt://neo4j:7687
+                    - FLASK_APP=main.py
+                    - FLASK_DEBUG=1
+                depends_on:
+                    - neo4j
+            website:
+                build: ./dashboard
+                ports:
+                    - '3000:3000'
+                environment:
+                    - FLASK_APP_URL=http://localhost:5000
+                depends_on:
+                    - api
+
+        steps:
+            - name: Start Services
+              run: |
+                  docker-compose up -d
+                  sleep 10
+
+            - name: Run Integration Tests
+              run: python tests/integration.py
+
+            - name: Stop Services
+              run: docker-compose down
+
+volumes:
+    neo4j_data:
+# I know you can see the env vars, they are only for testing purposes
