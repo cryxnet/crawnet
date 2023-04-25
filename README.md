@@ -73,7 +73,7 @@ The Intelligence Service is using the following sources:
 
 ## Testing
 
--   We have a pipeline that is automatically testing the [intergration test](/tests/intergration.py) between the 3 services and source code for any vulnerabilities
+-   We have a pipeline that is automatically testing the [intergration](/tests/intergration.py) between the 3 services and source code for any vulnerabilities
 
 ## Security Policy
 
