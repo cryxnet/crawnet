@@ -8,10 +8,13 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+
             - name: Start Services
               run: |
                   docker-compose up -d
-                  sleep 10
+                  sleep 20
 
             - name: Run Integration Tests
               run: python tests/integration.py
