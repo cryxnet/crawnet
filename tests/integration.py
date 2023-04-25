@@ -32,31 +32,25 @@ def test_reach_neo4j():
         driver.close()
     print("[+] Success")
 
-
-
 def test_api_website_communication():
-    website_url = "http://127.0.0.1:3000"
-    api_route = "/graph"
+    website_url = "http://127.0.0.1:3000/graph"
 
     print("[~] Test if we can reach the API from the website")
-    response = requests.get(f"{website_url}{api_route}")
+    response = requests.get(website_url)
     assert response.status_code == 200, "Unable to reach API from website"
     print("[+] Success")
 
 def test_api_neo4j_communication():
-    api_url = "http://127.0.0.1:5000"
-    api_route = "/domain"
+    api_url = "http://127.0.0.1:5000/domain"
 
     print("[~] Test if the API works with Neo4j")
-    response = requests.get(f"{api_url}{api_route}")
-    assert response.json() == {'nodes': [], 'relationships': []}, "Unable to retrieve data from Neo4j"
+    response = requests.get(api_url)
+    assert response.json() == {'nodes': [], 'relationships': []}, "Unable to retrieve data from Neo4j via API"
     print("[+] Success")
 
 # Run the tests
 if __name__ == "__main__":
-    print("[+] Waiting for the services to start up")
-    time.sleep(10)
-    print("[+] Run the tests")
+    print("[~] Started the tests...")
     test_reach_website()
     test_reach_api()
     test_reach_neo4j()

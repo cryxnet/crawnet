@@ -59,6 +59,7 @@ docker compose up
 ## Roadmap
 
 -   [x] First Version Release
+-   [ ] Collectors Handling (Clean Code)
 -   [ ] Threat Intelligence Data
 -   [ ] Email Recon
 -   [ ] Better UI/UX
