@@ -23,6 +23,9 @@ jobs:
                   docker-compose up -d
                   sleep 50
 
+            - name: Installing PIP Packages
+            - run: pip install neo4j
+
             - name: 'Integration Test: Test Reach Website'
               run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_reach_website()"
 
