@@ -18,7 +18,7 @@ With the power of graph databases, we can find and display quickly information a
     ·
     <a href="https://github.com/cryxnet/crawnet/issues">Request Feature</a>
         ·
-    <a href="https://github.com/cryxnet/crawnet/issues">Report Vulnerability</a>
+    <a href="https://github.com/cryxnet/crawnet/security/policy">Report Vulnerability</a>
   </p>
 </div>
 
