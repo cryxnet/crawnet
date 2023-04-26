@@ -23,6 +23,12 @@ With the power of graph databases, each node in the graph represents a domain an
   </p>
 </div>
 
+## Architecture
+
+-   Each microservice is in a single container.
+
+<img src="assets/microservice_architecture.png" alt="architecture" heigth="400" width="400">
+
 ## Installation
 
 To install the project and its dependencies, follow these steps:
@@ -59,7 +65,7 @@ docker compose up
 ## Roadmap
 
 -   [x] First Version Release
--   [ ] Collectors Handling (Clean Code)
+-   [ ] Collectors Handling (Clean Code / Refactoring)
 -   [ ] Threat Intelligence Data
 -   [ ] Email Recon
 -   [ ] Better UI/UX
@@ -75,6 +81,16 @@ The Intelligence Service is using the following sources:
 ## Testing
 
 -   We have a pipeline that is automatically testing the [intergration](/tests/intergration.py) between the 3 services and source code for any vulnerabilities
+
+| Test Case                 | Expected Outcome                                                                        | Outcome                                                                                                                                                       |
+| ------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Reach Website             | Response status code is 200 and "Success" is printed to console                         | [![Integration Test](https://github.com/cryxnet/crawnet/actions/workflows/test.yml/badge.svg)](https://github.com/cryxnet/crawnet/actions/workflows/test.yml) |
+| Reach API                 | Response status code is 200 or 404 and "Success" is printed to console                  | [![Integration Test](https://github.com/cryxnet/crawnet/actions/workflows/test.yml/badge.svg)](https://github.com/cryxnet/crawnet/actions/workflows/test.yml) |
+| Reach Neo4j               | Neo4j connection is successful and "Success" is printed to console                      | [![Integration Test](https://github.com/cryxnet/crawnet/actions/workflows/test.yml/badge.svg)](https://github.com/cryxnet/crawnet/actions/workflows/test.yml) |
+| API-Website Communication | Response status code is 200 and "Success" is printed to console                         | [![Integration Test](https://github.com/cryxnet/crawnet/actions/workflows/test.yml/badge.svg)](https://github.com/cryxnet/crawnet/actions/workflows/test.yml) |
+| API-Neo4j Communication   | Response JSON is {'nodes': [], 'relationships': []} and "Success" is printed to console | [![Integration Test](https://github.com/cryxnet/crawnet/actions/workflows/test.yml/badge.svg)](https://github.com/cryxnet/crawnet/actions/workflows/test.yml) |
+| Vulnerable Python Code    | Nothing Found                                                                           | ![Actions Status](https://github.com/cryxnet/crawnet/workflows/CodeQL/badge.svg)                                                                              |
+| Vulnerable TS Code        | Nothing Found                                                                           | ![Actions Status](https://github.com/cryxnet/crawnet/workflows/CodeQL/badge.svg)                                                                              |
 
 ## Security Policy
 
