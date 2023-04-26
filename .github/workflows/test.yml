@@ -13,7 +13,7 @@ jobs:
 
             - name: Start Services
               run: |
-                  docker-compose up -d
+                  docker-compose up
                   sleep 50
 
             - name: 'Integration Test: Test Reach Website'
