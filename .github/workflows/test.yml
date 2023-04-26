@@ -20,7 +20,7 @@ jobs:
 
             - name: Start Services
               run: |
-                  dockerm compose up -d
+                  docker compose up -d
                   sleep 30
 
             - name: Installing PIP Packages
