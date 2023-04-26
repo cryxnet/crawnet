@@ -22,12 +22,6 @@ With the power of graph databases, each node in the graph represents a domain an
   </p>
 </div>
 
-## Architecture
-
--   Each microservice is in a single container.
-
-<img src="assets/microservice_architecture.png" alt="architecture" heigth="400" width="400">
-
 ## Installation
 
 To install the project and its dependencies, follow these steps:
@@ -77,6 +71,12 @@ The Intelligence Service is using the following sources:
 -   [Cert Fingerprint | CRT.SH](https://crt.sh/)
 -   [IP Information | IPAPI.CO](https://ipapi.co/IPADDRESS/json/)
 -   [Python | WHOIS](https://pypi.org/project/python-whois/)
+
+## Architecture
+
+-   Each microservice is in a single container.
+
+<img src="assets/microservice_architecture.png" alt="architecture" heigth="400" width="400">
 
 ## Testing
 

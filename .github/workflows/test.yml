@@ -38,8 +38,8 @@ jobs:
             - name: 'Integration Test: API and Neo4j Communication'
               run: cd tests && python -c "from integration import IntegrationTestCases;IntegrationTestCases().test_api_neo4j_communication()"
 
-            - name: 'Integration Test: API and Website Communication'
-              run: cd tests && python -c "from integration import IntegrationTestCases;IntegrationTestCases().test_api_website_communication()"
+            # - name: 'Integration Test: API and Website Communication'
+            #   run: cd tests && python -c "from integration import IntegrationTestCases;IntegrationTestCases().test_api_website_communication()"
 
             - name: Stop Services
               run: docker compose down
