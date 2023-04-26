@@ -1,4 +1,3 @@
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/cryxnet/crawnet">
@@ -8,9 +7,9 @@
   <h3 align="center">CRAWNET</h3>
 
   <p align="center">
-CRAWNET is a graph-based domain discovery tool by CRYXNET that helps you gather information
+CRAWNET is a graph-based domain discovery tool that helps you gather information
 about domains and potential relationships with other actors.
-With the power of graph databases, each node in the graph represents a domain and its attributes, such as DNS records, IP addresses, and services related to the IP.
+With the power of graph databases, each node in the graph represents a domain and its attributes, such as DNS records, WHOIS, Subdomains, Certificate, IP addresses, and services related to the IP.
     <br />
     <a href="https://github.com/cryxnet/crawnet"><strong>Explore the docs »</strong></a>
     <br />
@@ -65,7 +64,8 @@ docker compose up
 ## Roadmap
 
 -   [x] First Version Release
--   [ ] Collectors Handling (Clean Code / Refactoring)
+-   [ ] Collectors Handling concept (Clean Code / Refactoring / Easy to add new intelligence collectors)
+-   [ ] Relationship detection & connection engine (Make the code clean and automatically connects nodes if they have anything in common together)
 -   [ ] Threat Intelligence Data
 -   [ ] Email Recon
 -   [ ] Better UI/UX
@@ -102,7 +102,7 @@ The Intelligence Service is using the following sources:
 
 YOUR USAGE OF THIS PROJECT CONSTITUTES YOUR AGREEMENT TO THE FOLLOWING TERMS:
 
-    THE MISUSE OF THE DATA PROVIDED BY THIS PROJECT AND ITS MALWARES MAY LEAD TO CRIMINAL CHARGES AGAINST THE PERSONS CONCERNED.
+    THE MISUSE OF THE DATA PROVIDED BY THIS PROJECT MAY LEAD TO CRIMINAL CHARGES AGAINST THE PERSONS CONCERNED.
 
     I DO NOT TAKE ANY RESPONSIBILITY FOR THE CASE. USE THIS PROJECT ONLY FOR RESEARCH PURPOSES, EDUCATIONAL PURPOSES & ETHICAL ONLY.
 

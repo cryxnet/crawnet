@@ -16,8 +16,20 @@ jobs:
                   docker-compose up -d
                   sleep 20
 
-            - name: Run Integration Tests
-              run: python tests/integration.py
+            - name: 'Integration Test: Test Reach Website'
+              run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_reach_website()"
+
+            - name: 'Integration Test: Test Reach API'
+              run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_reach_api()"
+
+            - name: 'Integration Test: Test Reach Neo4j'
+              run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_reach_neo4j()"
+
+            - name: 'Integration Test: Test API and Website Communication'
+              run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_api_website_communication()"
+
+            - name: 'Integration Test: Test API and Neo4j Communication'
+              run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_api_neo4j_communication()"
 
             - name: Stop Services
               run: docker-compose down
