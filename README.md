@@ -9,7 +9,7 @@
   <p align="center">
 CRAWNET is a graph-based domain discovery tool that helps you gather information
 about domains and potential relationships with other actors.
-With the power of graph databases, each node in the graph represents a domain and its attributes, such as DNS records, WHOIS, Subdomains, Certificate, IP addresses, and services related to the IP.
+With the power of graph databases, we can find and display quickly information and relationship with other actors, to identify threats before they happen and much more.
     <br />
     <a href="https://github.com/cryxnet/crawnet"><strong>Explore the docs »</strong></a>
     <br />
@@ -91,6 +91,12 @@ The Intelligence Service is using the following sources:
 | API-Neo4j Communication   | Response JSON is {'nodes': [], 'relationships': []} and "Success" is printed to console | [![Integration Test](https://github.com/cryxnet/crawnet/actions/workflows/test.yml/badge.svg)](https://github.com/cryxnet/crawnet/actions/workflows/test.yml) |
 | Vulnerable Python Code    | Nothing Found                                                                           | ![Actions Status](https://github.com/cryxnet/crawnet/workflows/CodeQL/badge.svg)                                                                              |
 | Vulnerable TS Code        | Nothing Found                                                                           | ![Actions Status](https://github.com/cryxnet/crawnet/workflows/CodeQL/badge.svg)                                                                              |
+
+### Local Testing
+
+```bash
+python tests/intergration.py
+```
 
 ## Security Policy
 

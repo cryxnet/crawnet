@@ -40,6 +40,7 @@ jobs:
 
             # - name: 'Integration Test: API and Website Communication'
             #   run: cd tests && python -c "from integration import IntegrationTestCases;IntegrationTestCases().test_api_website_communication()"
+            # Disabled during bug found in GitHub Action + Docker Networking
 
             - name: Stop Services
               run: docker compose down
