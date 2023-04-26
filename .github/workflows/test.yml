@@ -21,7 +21,7 @@ jobs:
             - name: Start Services
               run: |
                   docker-compose up -d
-                  sleep 50
+                  sleep 30
 
             - name: Installing PIP Packages
               run: pip install neo4j

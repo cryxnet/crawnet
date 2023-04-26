@@ -38,6 +38,9 @@ class IntegrationTestCases:
 
         print("[~] Test if we can reach the API from the website")
         response = requests.get(website_url)
+        print(response.status_code)
+        print(response)
+        print(response.json())
         assert response.status_code == 200, "Unable to reach API from website"
         print("[+] Success")
 
