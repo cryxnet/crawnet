@@ -4,18 +4,16 @@ on:
     push:
         branches: [main]
 
-env:
-    - NEO4J_USERNAME: neo4j
-    - NEO4J_PASSWORD: neo4j123
-    - NEO4J_CONNECTION_URI: bolt://neo4j:7687
-    - FLASK_APP: app.py
-    - FLASK_DEBUG: 1
-    - FLASK_APP_URL: http://localhost:5000
-
 jobs:
     Testing:
         runs-on: ubuntu-latest
-
+        env:
+            NEO4J_USERNAME: neo4j
+            NEO4J_PASSWORD: neo4j123
+            NEO4J_CONNECTION_URI: bolt://neo4j:7687
+            FLASK_APP: app.py
+            FLASK_DEBUG: 1
+            FLASK_APP_URL: http://localhost:5000
         steps:
             - name: Checkout Code
               uses: actions/checkout@v2
