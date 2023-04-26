@@ -27,7 +27,6 @@ services:
             - neo4j
         networks:
             - app_net
-        network_mode: host
 
     dashboard:
         build: ./dashboard
