@@ -26,19 +26,19 @@ jobs:
             - name: Installing PIP Packages
               run: pip install neo4j
 
-            - name: 'Integration Test: Test Reach Website'
+            - name: 'Integration Test: Reach Website'
               run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_reach_website()"
 
-            - name: 'Integration Test: Test Reach API'
+            - name: 'Integration Test: Reach API'
               run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_reach_api()"
 
-            - name: 'Integration Test: Test Reach Neo4j'
+            - name: 'Integration Test: Reach & Connect to Neo4j'
               run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_reach_neo4j()"
 
-            - name: 'Integration Test: Test API and Website Communication'
+            - name: 'Integration Test: API and Website Communication'
               run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_api_website_communication()"
 
-            - name: 'Integration Test: Test API and Neo4j Communication'
+            - name: 'Integration Test: API and Neo4j Communication'
               run: cd tests && python -c "from integration  import IntegrationTestCases;IntegrationTestCases().test_api_neo4j_communication()"
 
             - name: Stop Services
