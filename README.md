@@ -52,7 +52,7 @@ mv sample.env .env
 4. Start the docker stack
 
 ```bash
-docker compose up
+docker compose up -f docker-compose.prod.yaml
 ```
 
 ## Roadmap
@@ -71,6 +71,10 @@ The Intelligence Service is using the following sources:
 -   [Cert Fingerprint | CRT.SH](https://crt.sh/)
 -   [IP Information | IPAPI.CO](https://ipapi.co/IPADDRESS/json/)
 -   [Python | WHOIS](https://pypi.org/project/python-whois/)
+
+### Subdomains
+
+To get gather subdomains from a domain we use technique like google dorks and certifcate fingerprinting.
 
 ## Architecture
 
