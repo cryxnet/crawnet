@@ -2,6 +2,7 @@
 /archive
 .vscode/
 /lab
+oversen
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
