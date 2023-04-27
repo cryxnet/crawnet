@@ -24,11 +24,11 @@ jobs:
               with:
                   context: ./dashboard
                   push: true
-                  tags: cryxnet/crawnet-dashboard:${{ github.ref_tag }}
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/crawnet-dashboard:latest
 
             - name: Build and push overseen image
               uses: docker/build-push-action@v2
               with:
                   context: ./overseen
                   push: true
-                  tags: cryxnet/crawnet-overseen:${{ github.ref_tag }}
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/crawnet-overseen:latest
