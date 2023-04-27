@@ -72,6 +72,10 @@ The Intelligence Service is using the following sources:
 -   [IP Information | IPAPI.CO](https://ipapi.co/IPADDRESS/json/)
 -   [Python | WHOIS](https://pypi.org/project/python-whois/)
 
+### Subdomains
+
+To get gather subdomains from a domain we use technique like google dorks and certifcate fingerprinting.
+
 ## Architecture
 
 -   Each microservice is in a single container.
