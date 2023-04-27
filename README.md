@@ -52,7 +52,7 @@ mv sample.env .env
 4. Start the docker stack
 
 ```bash
-docker compose up
+docker compose up -f docker-compose.prod.yaml
 ```
 
 ## Roadmap
