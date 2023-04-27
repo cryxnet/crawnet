@@ -2,7 +2,7 @@ name: Integration Test
 
 on:
     push:
-        branches: [main]
+        branches: [main, development]
 
 jobs:
     Testing:
@@ -20,7 +20,7 @@ jobs:
 
             - name: Start Services
               run: |
-                  docker compose up -d
+                  docker compose up -d -f docker-compose.dev.yaml
                   sleep 30
 
             - name: Installing PIP Packages
