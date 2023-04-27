@@ -2,7 +2,7 @@ name: Integration Test
 
 on:
     push:
-        branches: [main]
+        branches: [main, development]
 
 jobs:
     Testing:
@@ -20,7 +20,7 @@ jobs:
 
             - name: Start Services
               run: |
-                  docker compose up -d
+                  docker compose -f docker-compose.dev.yaml up -d
                   sleep 30
 
             - name: Installing PIP Packages
@@ -38,9 +38,8 @@ jobs:
             - name: 'Integration Test: API and Neo4j Communication'
               run: cd tests && python -c "from integration import IntegrationTestCases;IntegrationTestCases().test_api_neo4j_communication()"
 
-            # - name: 'Integration Test: API and Website Communication'
-            #   run: cd tests && python -c "from integration import IntegrationTestCases;IntegrationTestCases().test_api_website_communication()"
-            # Disabled during bug found in GitHub Action + Docker Networking
+            - name: 'Integration Test: API and Website Communication'
+              run: cd tests && python -c "from integration import IntegrationTestCases;IntegrationTestCases().test_api_website_communication()"
 
             - name: Stop Services
-              run: docker compose down
+              run: docker compose -f docker-compose.dev.yaml down
