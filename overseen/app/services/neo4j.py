@@ -125,20 +125,16 @@ class Neo4jService(Service):
         result = self.session.run("""MERGE (n:Domain{name: $name})
                           ON CREATE SET
                           n.ipaddress = $ipaddress,
-                          n.dns_records = $dns_records,
                           n.whois_records = $whois_records,
                           n.hosting_provider = $hosting_provider,
-                          n.threat_status = $threat_status,
                           n.registrar = $registrar,
                           n.certificate_fingerprint = $certificate_fingerprint,
                           n.location = $location
                           RETURN id(n) AS id""",
                           name=domain.name,
                           ipaddress=json.dumps(domain.ipaddress.get_data()) if not isinstance(domain.ipaddress, str) else "unknown",
-                          dns_records=domain.dns_records,
                           whois_records=json.dumps(domain.whois_records),
                           hosting_provider=json.dumps(domain.hosting_provider.get_data()) if not isinstance(domain.hosting_provider, str) else "unknown",
-                          threat_status=domain.threat_status,
                           registrar=json.dumps(domain.registrar.get_data()) if not isinstance(domain.registrar, str) else "unknown",
                           certificate_fingerprint=json.dumps(domain.certificate_fingerprint),
                           location=json.dumps(domain.location.get_data()) if not isinstance(domain.location, str) else "unknown")

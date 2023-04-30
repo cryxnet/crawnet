@@ -24,13 +24,6 @@ class IntelligenceService():
 
         return IPAddress(address=ip, location=location)
 
-    # TODO: implement __getDNSRecordsFromDomain
-    def __getDNSRecordsFromDomain(self, domain: str):
-        """
-        This method gets the DNS records from a domain.
-        """
-        return "NOT IMPLEMENT"
-
     def __getWHOISFromDomain(self, domain: str):
         """
         This method gets the WHOIS from a domain.
@@ -54,12 +47,6 @@ class IntelligenceService():
         hosting_provider = Hosting(organization=org, ipaddress=ipaddress)
 
         return hosting_provider
-
-    def __getThreatStatusFromDomain(self, domain: str):
-        """
-        This method gets information about threats from a domain.
-        """
-        return "raise NotImplementedError()"
 
     def __getSubdomainFromDomain(self, domain: str):
             subdomains = []
@@ -125,10 +112,9 @@ class IntelligenceService():
         print("[~] Starting collecting data with different techniques")
 
         ipaddress = self.__getIPAddressFromDomain(domain)
-        dns_records = self.__getDNSRecordsFromDomain(domain)
         whois_records = self.__getWHOISFromDomain(domain)
         hosting_provider = self.__getHostingProviderFromIP(ipaddress.address)
-        threat_status = self.__getThreatStatusFromDomain(domain)
+
         registrar = self.__getRegistrarFromDomain(domain)
         certificate_fingerprint = self.__getCertificateFingerprintFromDomain(domain)
         location = self.__getLocationFromIP(ipaddress.address)
@@ -136,10 +122,8 @@ class IntelligenceService():
 
         domain_object = Domain(name=domain,
                                 ipaddress=ipaddress,
-                                dns_records=dns_records,
                                 whois_records=whois_records,
                                 hosting_provider=hosting_provider,
-                                threat_status=threat_status,
                                 registrar=registrar,
                                 certificate_fingerprint=certificate_fingerprint,
                                 location=location,
