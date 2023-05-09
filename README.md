@@ -57,11 +57,15 @@ docker compose -f docker-compose.prod.yaml up
 
 ## Roadmap
 
+**v1**
+
 -   [x] First Version Release
--   [ ] Collectors Handling concept (Clean Code / Refactoring / Easy to add new intelligence collectors)
--   [ ] Relationship detection & connection engine (Make the code clean and automatically connects nodes if they have anything in common together)
+
+**v2**
+
+-   [ ] Collectors Handling (Easy to add new intelligence and entity nodes)
+-   [ ] Relationship detection & connection engine (Database engine that automatically connects nodes if they have anything in common together)
 -   [ ] Threat Intelligence Data
--   [ ] Email Recon
 -   [ ] Better UI/UX
 
 ## Intelligence Data
