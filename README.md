@@ -78,9 +78,11 @@ To get gather subdomains from a domain we use technique like google dorks and ce
 
 ## Architecture
 
--   Each microservice is in a single container.
-
 <img src="assets/microservice_architecture.png" alt="architecture" heigth="400" width="400">
+
+-   For the dashboard we use [Next.js](https://nextjs.org/) with the [MUI](https://mui.com/), [vis-data](https://www.npmjs.com/package/vis-data) and [vis-network](https://www.npmjs.com/package/vis-network) libraries to display the nodes and interaction with the api (we also use other libraries).
+-   For the API we use the Flask framework for python.
+-   For the database we use the graph database [Neo4j](https://neo4j.com/)
 
 ## Testing
 
