@@ -59,9 +59,15 @@ docker compose -f docker-compose.prod.yaml up
 
 **v1**
 
--   [x] First Version Release
+-   [x] The overseen service (the api) can collect data from various open source intelligence services.
+-   [x] The overseen service (the api) can create entity nodes and relationships in neo4j.
+-   [x] The user can easily interact with the api
+-   [x] The user can submit a new domain to discover via an forumal
+-   [x] The user has an interactive way to see the nodes and their relationships on the website
+-   [x] First Version Release (09.05.2023)
 
 **v2**
+(Development begins Q3 2023)
 
 -   [ ] Collectors Handling (Easy to add new intelligence and entity nodes)
 -   [ ] Relationship detection & connection engine (Database engine that automatically connects nodes if they have anything in common together)
@@ -107,6 +113,12 @@ To get gather subdomains from a domain we use technique like google dorks and ce
 ```bash
 python tests/intergration.py
 ```
+
+## Pipelines
+
+-   [Testing Pipeline](https://github.com/cryxnet/crawnet/actions/workflows/testing.yml): This pipeline tests our tool with integration tests.
+-   [CodeQL Pipeline](https://github.com/cryxnet/crawnet/actions/workflows/github-code-scanning/codeql): This pipeline tests for any vulnerability in our code
+-   [Docker Image Push Pipeline](https://github.com/cryxnet/crawnet/actions/workflows/docker-image.yml): This pipelines pushes a new docker image to the dockerhub registry when there is a new release.
 
 ## Security Policy
 
