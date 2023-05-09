@@ -34,7 +34,7 @@ With the power of graph databases, we can find and display quickly information a
     -   [Local Testing](#local-testing)
 -   [Pipelines](#pipelines)
 -   [Security Policy](#security-policy)
--   [Hosting on the Cloud](#hosting-on-the-cloud)
+-   [Hosting in the Cloud](#hosting-in-the-cloud)
 -   [Disclaimer](#disclaimer)
 -   [Author](#author)
 
@@ -142,7 +142,7 @@ python tests/intergration.py
 -   We encourage you to report any issues, bugs, or vulnerabilities that you encounter while using our service.
 -   Your help in identifying and reporting any security issues or vulnerabilities is greatly appreciated. Please refer to our [security policy](/SECURITY.md) for guidance.
 
-## Hosting on the Cloud
+## Hosting in the Cloud
 
 A short guide if you wan't to deploy this tool for your team in the cloud. This are the minimum requirements.
 
