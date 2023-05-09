@@ -86,7 +86,7 @@ To get gather subdomains from a domain we use technique like google dorks and ce
 
 ## Testing
 
--   We have a pipeline that is automatically testing the [intergration](/tests/intergration.py) between the 3 services and source code for any vulnerabilities
+-   We have a pipeline that is automatically testing the [intergration](/tests/integration.py) between the 3 services and source code for any vulnerabilities
 
 | Test Case                 | Expected Outcome                                                                        | Outcome                                                                                                                                                             |
 | ------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
