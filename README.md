@@ -9,7 +9,7 @@
   <p align="center">
 CRAWNET is a graph-based domain discovery tool that helps you gather information
 about domains and potential relationships with other actors.
-With the power of graph databases, we can find and display quickly information and relationship with other actors, to identify threats before they happen and much more.
+With the power of graph databases, we can find and display quickly information and relationship with other actors, to identify threats before they happen and much more. This tool is perfect for digital forensic, red teaming, penetration testing and cybersecurity researchers.
     <br />
     <a href="https://github.com/cryxnet/crawnet"><strong>Explore the docs »</strong></a>
     <br />
