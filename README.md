@@ -78,8 +78,8 @@ docker compose -f docker-compose.prod.yaml up
 -   [x] The overseen service (the api) can collect data from various open source intelligence services.
 -   [x] The overseen service (the api) can create entity nodes and relationships in neo4j.
 -   [x] The user can easily interact with the api
--   [x] The user can submit a new domain to discover via an forumal
--   [x] The user has an interactive way to see the nodes and their relationships on the website
+-   [x] The user can submit a new domain to discover via an formular
+-   [x] The user has an interactive way to see the nodes and their relationships on the dashboard
 -   [x] First Version Release (09.05.2023)
 
 **v2**

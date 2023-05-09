@@ -2,7 +2,7 @@
 /archive
 .vscode/
 /lab
-oversen
+k8s.yaml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
