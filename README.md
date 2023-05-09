@@ -22,6 +22,22 @@ With the power of graph databases, we can find and display quickly information a
   </p>
 </div>
 
+## Table of Contents
+
+-   [Table of Contents](#table-of-contents)
+-   [Installation](#installation)
+-   [Roadmap](#roadmap)
+-   [Intelligence Data](#intelligence-data)
+    -   [Subdomains](#subdomains)
+-   [Architecture](#architecture)
+-   [Testing](#testing)
+    -   [Local Testing](#local-testing)
+-   [Pipelines](#pipelines)
+-   [Security Policy](#security-policy)
+-   [Hosting on the Cloud](#hosting-on-the-cloud)
+-   [Disclaimer](#disclaimer)
+-   [Author](#author)
+
 ## Installation
 
 To install the project and its dependencies, follow these steps:
@@ -125,6 +141,15 @@ python tests/intergration.py
 -   Please take a moment to review and familiarize yourself with our [security policy](/SECURITY.md).
 -   We encourage you to report any issues, bugs, or vulnerabilities that you encounter while using our service.
 -   Your help in identifying and reporting any security issues or vulnerabilities is greatly appreciated. Please refer to our [security policy](/SECURITY.md) for guidance.
+
+## Hosting on the Cloud
+
+A short guide if you wan't to deploy this tool for your team in the cloud. This are the minimum requirements.
+
+| Cloud Provider | Instance Type | vCPUs | RAM | Storage | Cost (ca. per Hour) |
+| -------------- | ------------- | ----- | --- | ------- | ------------------- |
+| AWS            | t4g.medium    | 2     | 4GB | 20GB    | $0.0336             |
+| Azure          | A2 v2         | 2     | 4GB | 20GB    | $0.136              |
 
 ## Disclaimer
 
