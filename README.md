@@ -100,7 +100,7 @@ The Intelligence Service is using the following sources:
 
 ### Subdomains
 
-To get gather subdomains from a domain we use technique like google dorks and certifcate fingerprinting.
+To gather subdomains from a domain we use technique like google dorks and certifcate fingerprinting.
 
 ## Architecture
 
